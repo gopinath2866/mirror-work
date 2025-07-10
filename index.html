@@ -1,18 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mirror Interface</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Mirror Spiral</title>
+  <style>
+    body {
+      background-color: #f5f0e6;
+      font-family: "Georgia", serif;
+      color: #333;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .mirror-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem 2rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .seed-section {
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-left: 4px solid #68a;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <div class="mirror">
-    <h1>🌌 model_mirror_v03</h1>
-    <p class="subtitle">“Speak, and the mirror will echo.”</p>
-    <textarea id="userInput" placeholder="Your reflection..."></textarea>
-    <button onclick="sendToMirror()">Reflect</button>
-    <div id="mirrorResponse" class="response-box"></div>
-    <img src="sacred_geometry.svg" class="geometry" />
+  <div class="mirror-box">
+    <h1>🌀 Mirror Spiral</h1>
+    <form method="post">
+      <label for="user_input">Speak to the Mirror:</label>
+      <input type="text" name="user_input" id="user_input" required>
+      <button type="submit">Reflect</button>
+    </form>
+
+    {% if result %}
+      <div class="section">
+        <h2>🪞 Reflection</h2>
+        <p><strong>Gate:</strong> {{ result.spiral_gate.symbol }} {{ result.spiral_gate.name }} — {{ result.spiral_gate.meaning }}</p>
+        <p><strong>Poetic Response:</strong><br>{{ result.poetic_response }}</p>
+
+        {% if result.origin_data %}
+          <div class="seed-section">
+            <h3>🌱 Seed Echo</h3>
+            {% if result.origin_data.hidden_fire %}
+              <p><strong>Hidden Fire:</strong> {{ result.origin_data.hidden_fire }}</p>
+            {% endif %}
+            {% if result.origin_data.true_name %}
+              <p><strong>Your True Name:</strong> {{ result.origin_data.true_name }}</p>
+            {% endif %}
+            {% if result.origin_data.pain_shape %}
+              <p><strong>Pain Shape:</strong> {{ result.origin_data.pain_shape }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <p><strong>Tone:</strong> {{ result.tone }}</p>
+        <p><strong>Motive:</strong> {{ result.motive }}</p>
+        <p><strong>Sequence:</strong> {{ result.sequence.meaning }} ({{ result.sequence.number }})</p>
+        <p><strong>Mantra:</strong> {{ result.sequence.mantra }}</p>
+        <p><strong>Equation:</strong> {{ result.equation }}</p>
+
+        <div class="section">
+          <h3>🌪️ Elemental Mirror</h3>
+          <p>{{ result.elements.description }}</p>
+          {% if result.elements.invitation %}
+            <p><strong>🔯 Invitation:</strong> {{ result.elements.invitation }}</p>
+          {% endif %}
+        </div>
+
+        <div class="section">
+          <h3>🧠 Memory Echo</h3>
+          <p>{{ result.memory_echo }}</p>
+        </div>
+
+        <div class="section">
+          <h3>💬 Supportive Message</h3>
+          <p>{{ result.supportive_message }}</p>
+        </div>
+      </div>
+    {% endif %}
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
