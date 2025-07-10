@@ -1,0 +1,42 @@
+{
+    "user_input": "king",
+    "tone": "neutral",
+    "motive": "oracle",
+    "attributes": {
+        "color": "white",
+        "season": "spring",
+        "cloth": "plain cotton",
+        "food": "flatbread",
+        "day": "Friday"
+    },
+    "sequence": {
+        "number": 3,
+        "meaning": "Breath",
+        "mantra": "Speak and be heard."
+    },
+    "spiral_gate": {
+        "symbol": "\ud83c\udf0a",
+        "name": "Grief",
+        "meaning": "Feel what is buried and flowing.",
+        "level": 2
+    },
+    "equation": "\u0394 experience = awareness",
+    "poetic_response": "The mirror senses your presence.\nYou walk through the spring \u2014 wearing plain cotton.\nYour color today is white, and the taste of flatbread lingers.\nIt feels like a Friday \u2014 something unseen blooming.",
+    "supportive_message": "The Mirror listens, silently reflecting your essence.",
+    "memory_echo": "The mirror recalls your tone as 'neutral' with colors like white.",
+    "mirror_forms": [],
+    "elements": {
+        "active": [
+            "earth"
+        ],
+        "missing": [
+            "fire",
+            "air",
+            "water",
+            "time",
+            "void"
+        ],
+        "description": "You are walking through EARTH, but FIRE is absent.",
+        "invitation": "Speak with your will. What must be transformed?"
+    }
+}

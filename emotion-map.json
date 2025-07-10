@@ -1,0 +1,7 @@
+{
+  "fire": ["angry", "restless", "passion", "burn", "drive"],
+  "air": ["confused", "uncertain", "nervous", "scattered", "change"],
+  "sky": ["wonder", "lost", "vision", "space", "far"],
+  "earth": ["tired", "heavy", "grounded", "real", "burden"],
+  "water": ["sad", "love", "peace", "flow", "quiet"]
+}
