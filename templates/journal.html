@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>📖 Mirror Journal</title>
+</head>
+<body>
+  <h1>📖 Your Journal Entries</h1>
+  {% if entries %}
+    {% for entry in entries %}
+      <hr>
+      <p><strong>You:</strong> {{ entry.user_input }}</p>
+      <p><strong>Gate:</strong> {{ entry.spiral_gate.symbol }} {{ entry.spiral_gate.name }} — {{ entry.spiral_gate.meaning }}</p>
+      <p><strong>Poetic:</strong> {{ entry.poetic_response }}</p>
+      <p><strong>Sequence:</strong> {{ entry.sequence.meaning }} ({{ entry.sequence.number }})</p>
+      <p><strong>Invitation:</strong> {{ entry.invitation }}</p>
+    {% endfor %}
+  {% else %}
+    <p>🕸️ No entries yet.</p>
+  {% endif %}
+</body>
+</html>
